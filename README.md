@@ -43,9 +43,8 @@ My lecture videos can be watched on slack and lecture notes are also scanned in 
 * Homework 4 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw04/hw04.pdf) (due 11/1)
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw03/hw03.pdf) (due 10/16)
 * Homework 2 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw02/hw02.pdf) (due 9/22)
-* Homework 1 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw01/hw01.pdf) (due 9/12)
-* Homework 0 [(syllabus, page 6)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/syllabus/syllabus.pdf?raw=true) (due 8/28)
 -->
+* Homework 1 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw01/hw01.pdf) (due 9/5)
 
 ## Exams
 
@@ -59,7 +58,7 @@ My lecture videos can be watched on slack and lecture notes are also scanned in 
 
 * Midterm II [(exam 1)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm2/midterm2.pdf) [(solutions 1)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm2/midterm2_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/midterm2/midterm2.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/midterm2/midterm2_solutions.pdf) You are not responsible for 1e, h. [(exam 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/midterm2/midterm2.pdf) [(solutions 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/midterm2/midterm2_solutions.pdf) You are not responsible for 1e, h.
 
-* Final [(exam 2)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final.pdf) [(solutions 1)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/final/final.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/final/final_solutions.pdf) [(exam 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/final/final.pdf) [(solutions 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/final/final_solutions.pdf)
+* Final [(exam 1)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final.pdf) [(solutions 1)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/final/final.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/exams/final/final_solutions.pdf) [(exam 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/final/final.pdf) [(solutions 3)](https://github.com/kapelner/QC_Math_621_Fall_2019/blob/master/exams/final/final_solutions.pdf)
 
 ## Office Hours
 
