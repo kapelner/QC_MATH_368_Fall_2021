@@ -6,6 +6,7 @@ This is the course homepage for Math 368 / 621 at Queens College, City Universit
 
 My lecture videos can be watched on slack and lecture notes are also scanned in as PDF files contributed by myself.
 
+* Lecture 3 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec03kap.pdf)
 * Lecture 2 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec02kap.pdf)
 * Lecture 1 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec01kap.pdf)
 
