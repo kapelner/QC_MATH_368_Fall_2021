@@ -1,0 +1,248 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 368 / 650 Fall \the\year{} \\ Midterm Examination Two}
+\author{Professor Adam Kapelner}
+
+\date{Thursday, November 11, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 70 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{12} Let $X_1 \sim \exponential{\lambda_1}$ independent of $X_2 \sim \exponential{\lambda_2}$ where $\lambda_1 \neq \lambda_2$ but are both valid values in the parameter space of the exponential rv. Let $T = X_1 + X_2$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+
+\begin{enumerate}[(a)]
+\item $X_1$ does not have a PMF
+\item $X_1$ does not have a CDF
+\item $\prob{T \leq x} = \prob{X_1 \leq x, X_2 \leq x}$
+\item $\prob{X_1 > x, X_2 > x} = e^{-(\lambda_1 + \lambda_2)x}$
+\item $\support{T} = (0, \infty)$
+\item $T$ is Erlang-distributed
+\item $T$ is Gamma-distributed
+\item $T \sim \int_{\support{X_1}} f_{X_1}(x) f_{X_2}(x)dx$
+\item $T \sim \int_{\support{X_1}} f_{X_1}(x) f_{X_2}(t-x)dx$
+\item $T \sim \int_{\support{X_1}} f_{X_1}^{old}(x) f_{X_2}^{old}(t-x) \indic{t-x \in \support{X_1}} dx$
+\item $T \sim \int_{0}^\infty \lambda_1 e^{-\lambda_1 x} \lambda_2 e^{-\lambda_2 (t-x)} \indic{x-t \in (-\infty, 0)} dx$
+\item $T \sim \lambda_1 \lambda_2 \int_{0}^t e^{-\lambda_1 x} e^{-\lambda_2 (t-x)} dx$
+\item $T \sim \lambda_1 \lambda_2 e^{-\lambda_2 t} \indic{t > 0} \int_{0}^t e^{(\lambda_2 - \lambda_1)x} dx$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} e^{-\lambda_2 t} \indic{t > 0} \bracks{e^{(\lambda_2 - \lambda_1)x}}_0^t$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} e^{-\lambda_2 t} e^{(\lambda_2 - \lambda_1)t} \indic{t > 0}$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} \parens{e^{-\lambda_1 t} - e^{-\lambda_2 t}} \indic{t > 0}$
+\item If (p) were to be true, then the density of $T$ would have a kernel given by $k(t) = e^{-\lambda_1 t} - e^{-\lambda_2 t}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{9} Let $X_1, X_2 \iid \text{Lomax}\parens{\alpha, \lambda} :=\overbrace{\alpha\lambda^\alpha \tothepow{x + \alpha}{-(\alpha + 1)}}^{f^{old}(x)} \indic{x > 0}$ with parameter space $\alpha, \lambda > 0$. Let $T = X_1 + X_2$, $R = X_1 / X_2$ and $N = X_1 / (X_1 +  X_2)$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+\item If the density of $X_i$ were to be decomposed into $c \times  k(x)$ then $c = \alpha\lambda^\alpha$
+\item $f_T(t) = \indic{t>0} \int_0^t f^{old}(x) f^{old}(t-x) dx$
+\item $f_T(t) \propto \indic{t>0} \int_0^t f^{old}(x) f^{old}(t-x) dx$
+\item $f_T(t) \propto \indic{t>0} \int_0^t \tothepow{(x + \alpha)(t - x + \alpha)}{-(\alpha + 1)} dx$
+
+\item $f_R(r)  \propto \indic{r>0}\displaystyle \int_0^t \displaystyle\frac{f^{old}(x)}{f^{old}(r)} dx$
+\item $f_R(r) = \indic{r>0} \int_0^\infty x f^{old}(rx) f^{old}(x)  dx$
+\item $f_R(r) \propto \indic{r>0} \int_0^\infty x \tothepow{(rx + \alpha)(x + \alpha)}{-(\alpha + 1)}  dx$
+
+\item $f_N(n)  \propto \indic{n>0}\displaystyle \int_0^t \displaystyle\frac{f^{old}(x)}{f^{old}(x) + f^{old}(n)} dx$
+\item $f_N(n) = \indic{n>0} \int_0^\infty x f^{old}(nx) f^{old}(x - nx)  dx$
+\item $f^{old}_N(n) \propto  \int_0^\infty x \tothepow{(nx + \alpha)(x - nx + \alpha)}{-(\alpha + 1)}  dx$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{8} Let $X_1, X_2 \iid \gammanot{\alpha}{\beta}$. Let $T = X_1 + X_2$, $R = X_1 / X_2$ and $N = X_1 / (X_1 +  X_2)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item $F_X(x) = P(\alpha, \beta x)$
+\item $F_X(x) \propto \gamma(\alpha, \beta x)$
+\item $T \sim \gammanot{2\alpha}{\beta}$
+\item $T \sim \erlang{2\alpha}{\beta}$ if $2\alpha \in \naturals$
+\item $R \sim \text{BetaPrime}(\alpha, \alpha)$
+\item $N \sim \text{Beta}(\alpha, \alpha)$
+\item $N \sim \text{Beta}(\beta, \alpha)$ \\
+
+Assume (f) is true for the remainder of this problem
+\item $N \sim \uniform{0}{1}$ if $\alpha = 1$
+\item $F_N(n) = \int_0^n (u(1-u))^{\alpha - 1} du$
+\item $F_N(n) = B(n, \alpha, \alpha) / B(\alpha, \alpha)$
+\item $F_N(n) = I_n (\alpha, \alpha)$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} Let $X_1, X_2 \iid \gammanot{\alpha}{\beta}$. Let  $M = X_1 X_2$, \\ $\bv{g} : \reals^2 \rightarrow \reals^2$, $\bv{h} : \reals^2 \rightarrow \reals^2$ which denotes the inverse of $\bv{g}$, $\bv{X} := \twovec{X_1}{X_2}$, $\bv{x} := \twovec{x_1}{x_2}$, $\bv{Y} := \twovec{Y_1}{Y_2}$ and $\bv{y} := \twovec{y_1}{y_2}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{enumerate}[(a)]
+\item $\support{M} = (0, \infty)$
+\item The function $\bv{g}(x_1, x_2) = \twovec{x_1 x_2}{x_1 x_2}$ is invertible.
+\item The function $\bv{g}(x_1, x_2) = \twovec{x_1 x_2}{x_2}$ is invertible. 
+\item If $\bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$, then the Jacobian determinant is $\twobytwomat{1/y_2}{-y_1 / y_2^2}{0}{1}$.
+\item If $\bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$, then the Jacobian determinant is $1/y_2$.
+\item If $\x = \bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$ then $f_{\Y}(\y) = f_{\X}(y_1 / y_2, y_2) / \abss{y_2}$
+
+\item $f_M(m) = f_{\X}(m, m)$
+\item $f_M(m) = f_{X_1}(m) f_{X_2}(m)$
+\item $f_M(m) = \int_\reals f_{X_1}(um) f_{X_2}(m) du$
+\item $f_M(m) = \int_\reals f_{X_1}(m/u) f_{X_2}(u) / u ~du$
+\item $f_M(m) = \int_\reals f_{X_1}(m/u) f_{X_2}(u) / |u| ~du$
+\item $f_M(m) = \int_\reals f_{\X}(m/u, u) / |u| ~du$
+
+\item $f_M(m) = \displaystyle\frac{\beta^{2\alpha}}{\Gamma(\alpha)^2} \indic{m > 0} \int_0^\infty \oneover{u} \tothepow{\displaystyle \frac{m}{u}}{\alpha - 1} e^{-\beta m / u} u^{\alpha - 1} e^{-\beta u}~du$
+
+\item $f_M(m) = \displaystyle\frac{\beta^{2\alpha}}{\Gamma(\alpha)^2} m^{\alpha - 1} \indic{m > 0} \int_0^\infty \frac{e^{-\beta (m / u + u)}}{u} ~du$
+
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{9} Consider a sequence of rv's $\Xoneton \iid \logistic{0}{1} := \displaystyle \frac{e^{-x}}{\squared{1 + e^{-x}}}$ \\ whose expectation is zero and let $X_{(1)}, \ldots, X_{(n)}$ denote this sequence's order statistics and $R := X_{(n)} - X_{(1)}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{18} 
+
+\begin{enumerate}[(a)]
+\item For all $i$, $X_i$ is an \qu{error distribution}
+\item There exist nonzero constants $a, b$ such that for all $i$, $a X_i + b$ is an \qu{error distribution}
+
+\item $F_{X_{(n)}} = F(x)^n$
+\item If $\Xoneton$ were not independent, the formula in (c) could be different
+
+\item $X_{(1)}, \ldots, X_{(n)} \iid \logistic{0}{1}$
+\item $X_{(1)}, \ldots, X_{(n)}$ are all independent
+\item $X_{(1)}$ has most of its mass near zero
+\item $X_{(n)}$ has most of its mass near zero
+
+\item $\support{X_{(k)}} = \reals$ for all $k$ and all $n$
+
+\item $\expe{R} = 0$
+
+\item $\prob{R \in [-a, +a]}$ for $a \in \reals$ increases as $n$ gets larger
+
+\item $F_{X_{(1)}}(x) = 1 - \tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $F_{X_{(1)}}(x) = 1 - n\tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $F_{X_{(1)}}(x) = 1 - \tothepow{\displaystyle \frac{e^{-x}}{(1 + e^{-x})^2}}{n}$ 
+
+\item $f_{X_{(1)}}(x) = n \displaystyle\tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $f_{X_{(k)}}(x) = n \displaystyle \frac{e^{-x(n-k+1)}}{(1 + e^{-x})^{n+1}} $  
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{8} Let $X \sim \exponential{\lambda}$ and $Y\,|\,X = x \sim \uniform{0}{x}$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+\item The support of the joint density of $X$ and $Y$ is in the first quadrant of the cartesian plane, below the line $y=x$ and above the $x$-axis.
+\item $\support{Y} = [0,1]$
+\item $\prob{Y > 1/2} = 1/2$ for all $\lambda$ in the parameter space of the exponential rv
+\item For positive $y$, $f_Y(y)$ is monotonically decreasing
+\item $f_X(x) = \lambda e^{-\lambda x}$
+\item $f_Y(y) = \lambda e^{-\lambda y}$
+
+\item $f_Y(y) = \indic{y > 0} \displaystyle\int_y^\infty \displaystyle \frac{e^{-\lambda x}}{x} dx$
+
+\item $\support{X\,|\,Y=y} = [y, \infty)$
+\item $X\,|\,Y=y$ is a uniform rv
+
+\item $\displaystyle\int_\reals \displaystyle\int_\reals \displaystyle\oneover{x} \indic{y \in [0, x]} ~\lambda e^{-\lambda x} \indic{x > 0} ~dx dy = 1$ 
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{11} Let $X \sim \exponential{\lambda}$ and $Y\,|\,X  = x \sim \exponential{x}$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+
+\begin{enumerate}[(a)]
+\item $f_X(x) = \lambda e^{-\lambda x}$
+\item $f_{Y\,|\,X}(y,x) = xe^{-xy} \indic{y > 0}$
+\item $\lambda  \displaystyle \int_0^\infty \displaystyle\int_0^\infty xe^{-xy} ~e^{-\lambda x}   ~dx dy = 1$ 
+\item The rv $Y$ is considered a \qu{compound distribution}
+
+\item $\support{Y} = \reals$
+\item $Y$ is not a valid rv
+\item $f_Y(y) = \int_\reals f_{Y\,|\,X}(y,x) f_X(x) dx$
+
+\item $f_Y(y) = e^{-\lambda y} / y \indic{y>0}$
+\item $f_Y(y) = \lambda e^{-\lambda y} / (y + \lambda) \indic{y>0}$
+\item $f_Y(y) = \lambda y / (y + \lambda) \indic{y>0}$
+\item $f_Y(y) = \lambda / (y + \lambda)^2 \indic{y>0}$
+\item $f_Y(y) = \lambda e^{-\lambda y} / y \indic{y>0}$
+\end{enumerate}
+\eenum\instr \\
+
+\noindent Some of these antiderivatives (from Wolfram Alpha) may help you with the above problem:
+
+\beqn
+\int x^3 e^{-a x} dx &=& -\displaystyle\frac{e^{-a x} (a^3 x^3 + 3 a^2 x^2 + 6 a x + 6)}{a^4} + C \\
+\int x^2 e^{-a x} dx &=&  -\displaystyle\frac{e^{-a x} (a^2 x^2 + 2 a x + 2)}{a^3} + C \\
+\int x e^{-a x} dx &=& -\displaystyle\frac{e^{-a x} (a x + 1)}{a^2} + C
+\eeqn
+\pagebreak
+
+%%%%% mixture
+
+
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
