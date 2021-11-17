@@ -1,0 +1,228 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 368/621 Fall \the\year{} Homework \#5}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due by email 11:59PM November 30, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read on your own about moment generating functions and characteristic functions, the normal rv, the lognormal rv, the $\chisq{k}$ and $\chi_k$ distributions, Student's $T$ distribution, the $F$ distribution and the Cauchy distribution. Then, read about sample variance, sample standard deviation and Cohran's Theorem.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 7 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+
+\problem{Moment generating functions (mgf's) and characteristic functions (ch.f.'s)!}
+
+\begin{enumerate}
+
+\easysubproblem{Find a piecewise function that can compute $i^n$ where $i :=\sqrt{-1}$ and $n \in \naturals$. Hint: use the \qu{mod} function (modulus division) to express the cases (see section B's lecture).}\spc{3}
+
+\easysubproblem{Prove that $\abss{e^{i \theta}} = 1$ for all $\theta$.}\spc{3}
+
+\easysubproblem{Give one example function $f$ where you show conclusively that $f \notin L^1$.}\spc{3}
+
+\easysubproblem{Prove that all PDF's are $\in L^1$.}\spc{3}
+
+\intermediatesubproblem{Given the Fourier inversion theorem, prove that if $\phi_X(t) \in L^1$ then 
+
+\beqn
+f_X(x) = \oneover{2\pi} \int_\reals e^{itx} \phi_X(t) dt.
+\eeqn
+
+Hint: use the work found in \href{https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/lectures/lec14kap.pdf}{my lecture from 2017}.}\spc{2.5}
+
+\easysubproblem{Find the ch.f. of $X \sim \bernoulli{p}$.}\spc{2.5}
+
+\intermediatesubproblem{Find the ch.f. of $T \sim \binomial{n}{p}$. Hint: use the binomial theorem.}\spc{4}
+
+\easysubproblem{Using ch.f.'s, find $\expe{T}$.}\spc{4}
+
+\intermediatesubproblem{Using ch.f.'s, find $\var{T}$.}\spc{4}
+
+\intermediatesubproblem{Using ch.f.'s, show that if $\Xoneton \iid \bernoulli{p}$, then $T = X_1 + \ldots + X_n \sim \binomial{n}{p}$.}\spc{6}
+
+\easysubproblem{Define the mgf and prove properties 0, 2, 3 and 4 for mgf's. (You cannot prove property 1 without advanced math).}\spc{3}
+
+\end{enumerate}
+
+\problem{The central limit theorem (CLT) and a corollary.}
+
+\begin{enumerate}
+
+\easysubproblem{State the setup / assumptions of the CLT.}\spc{1}
+
+\easysubproblem{Prove the CLT (copy from the notes if you get stuck).}\spc{20}
+
+\hardsubproblem{Let $X_1, X_2, \ldots, X_n \iid$ some distribution with mean $\mu_X$ and variance $\sigsq_X < \infty$ and let $Y_1, Y_2, \ldots, Y_n \iid$ some distribution with mean $\mu_Y$ and variance $\sigsq_Y < \infty$ which are independent of the $X_i$'s. Prove the following central limit theorem corollary:
+
+\beqn
+\frac{(\Xbar - \Ybar) - (\mu_X - \mu_Y)}{\sqrt{\overn{\sigsq_X} + \overn{\sigsq_Y}}} \convd \stdnormnot.
+\eeqn
+
+We need this fact to do two-sample testing in statistics. This looks harder than it is. Trace through the proof in (b), use algebra to simplify expressions and make substitutions in the appropriate places.}\spc{20}
+
+\end{enumerate}
+
+\problem{Introducing the king: the normal distribution $\mathcal{N}$ and his princes/sses: the lognormal distribution Log$\mathcal{N}$, chi-squared distribution $\chi^2_k$, Student's T distribution $T_k$ and Fisher-Snecodor's distribution $F_{k_1,k_2}$.}
+
+\begin{enumerate}
+
+\easysubproblem{Let $X_1 \sim \normnot{\mu_1}{\sigsq_1}$ independent of $X_2 \sim \normnot{\mu_2}{\sigsq_2}$. Prove $X_1 + X_2 \sim  \normnot{\mu_1 + \mu_2}{\sigsq_1 + \sigsq_2}$ using ch.f.'s.}\spc{5}
+
+\extracreditsubproblem{Let $X_1 \sim \normnot{\mu_1}{\sigsq_1}$ independent of $X_2 \sim \normnot{\mu_2}{\sigsq_2}$. Prove $X_1 + X_2 \sim  \normnot{\mu_1 + \mu_2}{\sigsq_1 + \sigsq_2}$ using the definition of convolution on a separate page. This is a lot of boring algebra but it will hone your skills. You can find it in the book or on the Internet (but try not to look at the answer).}\spc{-0.5}
+
+%\intermediatesubproblem{Let $X \sim \normnot{\mu}{\sigsq}$ and $Y=X ~|~X \geq a$. Find $f_Y(y)$.}\spc{6}
+
+\easysubproblem{Let $X \sim \lognormnot{\mu}{\sigsq}$ and $Y=\natlog{X}$. How is $Y$ distributed? Use a heuristic argument. No need to actually change variables.}\spc{1}
+
+
+\intermediatesubproblem{Let $X_1 \sim \lognormnot{\mu_1}{\sigsq_1}$, $X_2 \sim \lognormnot{\mu_2}{\sigsq_2}, \ldots, X_n \sim \lognormnot{\mu_n}{\sigsq_n}$ all independent of each other and $Y=\prod_{i=1}^n X_i$. How is $Y$ distributed? Use a heuristic argument. No need to actually change variables.}\spc{1}
+
+%\intermediatesubproblem{The average return of the S\&P 500 stock index since 1928 is 11.4\% and the standard deviation is 19.7\%. Assume for the purposes of this problem that percentage returns is normally distributed (even though it is not true in practice). If you put \$1,000 into the stock market, what is the probability you have \$5,000 after 10 years? The \texttt{R} function you need is \texttt{plnorm}.}\spc{6}
+
+
+%\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots, k_1, \ldots) \sim \chisq{k}$ where $k_1, \ldots$ represents constants.}\spc{3}
+
+\easysubproblem{Let $X \sim \chisq{k}$, find $\expe{X}$ using the fact that $X = Z_1^2 + Z_2^2 + \ldots + Z_k^2$ where $Z_1,  Z_2, \ldots, Z_k \iid \stdnormnot$.}\spc{3}
+
+\easysubproblem{Let $X \sim \chisq{k} = \gammanot{\overtwo{k}}{\half}$. Find the PDF of $X$ by making the correct substitutions in the gamma PDF and simplifying.}\spc{3}
+
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, the function $g$ s.t. $g(Z_1,  Z_2, \ldots)  \sim \chisq{k}$ where $k \in \naturals$ is a constant is given below:
+
+\ingreen{
+\beqn
+g(Z_1,  Z_2, \ldots) = Z_1^2 + Z_2^2 + \ldots + Z_k^2 \sim \chisq{k}
+\eeqn}
+
+Following this example, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots) \sim F_{k_1,k_2}$ where $k_1, k_2 \in \naturals$ are constants.}\spc{3}
+
+\easysubproblem{Let $X \sim F_{k_1,k_2}$, find the kernel of $f_X(x)$.}\spc{3}
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots)  \sim T_{k}$ where $k \in \naturals$ is a constant.}\spc{3}
+
+
+\easysubproblem{Let $X \sim T_k$, find the kernel of $f_X(x)$.}\spc{3}
+
+\extracreditsubproblem{Derive the PDF of the $T_k$ distribution using the ratio formula where you first find the distribution of the denominator explicitly. Do on a separate piece of paper.}\spc{0}
+
+
+\extracreditsubproblem{Show that the PDF of $X \sim T_k$, converges to the PDF of $Z \sim \stdnormnot$ when $k \rightarrow \infty$. Hint: use Stirling's approximation. Do on a separate piece of paper.}\spc{0}
+
+
+\easysubproblem{Let $X \sim \cauchynot{0}{1}$, find the kernel of $f_X(x)$.}\spc{3}
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots) \sim \cauchynot{0}{1}$.}\spc{1}
+
+\easysubproblem{Let $X \sim \cauchynot{0}{1}$, prove that $\expe{X}$ does not exist without using its ch.f.}\spc{7}
+
+
+\end{enumerate}
+
+\problem{The $\chi^2$ r.v. within Cochran's Theorem.}
+
+\begin{enumerate}
+
+\easysubproblem{Given $\Xoneton \iid f(\mu,\sigsq)$, a density with finite variance, state the classic estimator $S^2$ (a r.v.) and the estimate (a scalar value) for $\sigsq$, the variance of the $X$'s.}\spc{1}
+
+\hardsubproblem{[MA] Prove $\expe{S^2} = \sigsq$. The answer is online but try to do it yourself. (This property is called \qu{unbiasedness} in a statistical inference context.}\spc{12}
+
+
+\easysubproblem{Given $\Xoneton \iid f(\mu,\sigsq)$, a density with finite variance, state the classic estimator $S$ (a r.v.) and the estimate (a scalar value) for $\sigma$, the standard error of the $X$'s.}\spc{3}
+
+\extracreditsubproblem{Prove this estimator is \textit{biased} i.e $\expe{S} \neq \sigma$.}\spc{12}
+
+\easysubproblem{State Cochran's Theorem.}\spc{4}
+
+\easysubproblem{Given $\Xoneton \iid \normnot{\mu}{\sigsq}$. Show that $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}} \sim \chisq{n}$.}\spc{3}
+
+\easysubproblem{Let $Z_1 := \frac{X_1 - \mu}{\sigma}, \ldots, Z_n := \frac{X_n - \mu}{\sigma}$. We know that $Z_1, \ldots, Z_n  \iid \stdnormnot$ and let the column vector r.v. $\Z := \bracks{Z_1 ~ \ldots ~ Z_n}^\top$. Express $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$ in vector notation using $\Z$.}\spc{1}
+
+\easysubproblem{Express $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$ as a quadratic form. What is the matrix that determines this quadratic form?}\spc{1}
+
+
+
+\easysubproblem{What is the rank of the determining matrix?}\spc{1}
+
+\easysubproblem{When computing $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} AKA \qu{degrees of freedom} go into the calculation?}\spc{1}
+
+
+\easysubproblem{Show that $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}} = \frac{(n-1)S^2}{\sigsq} + \frac{n(\Xbar - \mu)^2}{\sigsq}$.}\spc{4}
+
+
+\easysubproblem{Show that $\frac{n(\Xbar - \mu)^2}{\sigsq} \sim \chisq{1}$.}\spc{4}
+
+%\easysubproblem{Express $\frac{n(\Xbar - \mu)^2}{\sigsq}$ in vector notation.}\spc{4}
+
+\easysubproblem{Express $\frac{n(\Xbar - \mu)^2}{\sigsq}$ as a quadratic form. What is the matrix that determines this quadratic form? Call it $B_2$.}\spc{4}
+
+\easysubproblem{What is the rank of the determining matrix?}\spc{1}
+
+%\easysubproblem{When computing $\frac{n(\Xbar - \mu)^2}{\sigsq}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} go into the calculation?}\spc{1}
+
+\easysubproblem{Express $\frac{(n-1)S^2}{\sigsq}$ in vector notation.}\spc{4}
+
+\intermediatesubproblem{Express $\frac{(n-1)S^2}{\sigsq}$ as a quadratic form. What is the matrix that determines this quadratic form? Call it $B_1$.}\spc{4}
+
+\intermediatesubproblem{What is the rank of the determining matrix?}\spc{0}
+
+\easysubproblem{When computing $\frac{(n-1)S^2}{\sigsq}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} go into the calculation?}\spc{1}
+
+\easysubproblem{What is $B_1 + B_2$?}\spc{0}
+
+
+\easysubproblem{What is rank$(B_1)~+~$rank$(B_2)$?}\spc{0}
+
+\easysubproblem{Are the conditions of Cochran's Theorem satisfied so that we can conclude that $\frac{(n-1)S^2}{\sigsq} \sim \chisq{n-1}$ and that $\frac{(n-1)S^2}{\sigsq}$ is independent of $\frac{n(\Xbar - \mu)^2}{\sigsq}$? Yes or no.}\spc{0}
+
+\extracreditsubproblem{Prove Cochran's Theorem. Do on a separate sheet.}
+
+
+\hardsubproblem{[MA] What is $B_1B_2$? Why do you think this should be?}\spc{3}
+
+\intermediatesubproblem{Using your previous answers, show that $\frac{\Xbar - \mu}{\oversqrtn{S}} \sim T_{n-1}$.}\spc{7}
+
+
+\easysubproblem{Make up a definition of \qu{degrees of freedom} in English.}\spc{1}
+
+\intermediatesubproblem{What is the distribution of $S^2$?}\spc{1}
+
+%\hardsubproblem{[MA] What is $\expe{S}$?}\spc{5}
+%
+%\hardsubproblem{[MA] Create a new estimator $S_0$ that is unbiased for $\sigma$ i.e. ($\expe{S} = \sigma$). Hint: use $S$ but multiply by intelligent constants.}\spc{3}
+
+\end{enumerate}
+
+\end{document}
