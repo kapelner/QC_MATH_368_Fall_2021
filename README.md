@@ -6,6 +6,7 @@ This is the course homepage for Math 368 / 621 at Queens College, City Universit
 
 My lecture videos can be watched on slack and lecture notes are also scanned in as PDF files contributed by myself.
 
+* Lecture 21 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec21kap.pdf)
 * Lecture 20 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec20kap.pdf)
 * Lecture 19 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec19kap.pdf)
 * Lecture 18 (video on slack) [(Prof)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/lectures/lec18kap.pdf)
@@ -35,7 +36,7 @@ My lecture videos can be watched on slack and lecture notes are also scanned in 
 * Homework 8 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw08/hw08.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw08/hw08.pdf) (due 12/2)
 * Homework 7 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw07/hw07.pdf) (due 12/12)
 * Homework 6 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw06/hw06.pdf) (due 11/30)-->
-* Homework 5 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw05/hw05.pdf) (due 11/30)
+* Homework 5 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw05/hw05.pdf) (due 12/1)
 * Homework 4 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw04/hw04.pdf) (due 11/14)
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw03/hw03.pdf) (due 10/30)
 * Homework 2 [(download)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_368_Fall_2021/blob/master/homeworks/hw02/hw02.pdf) (due 9/30)
