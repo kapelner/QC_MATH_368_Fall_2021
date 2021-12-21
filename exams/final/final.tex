@@ -1,0 +1,494 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 368 / 650 Fall \the\year{} \\ Final Examination}
+\author{Professor Adam Kapelner}
+
+\date{Tuesday, December 21, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+\vspace{-.5cm}
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{three} pages (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{20} Let $X \sim \text{Logarithmic}(p) := \overbrace{-\displaystyle\oneover{\natlog{1-p}}\frac{p^x}{x}}^{p^{old}(x)} \indic{x \in \naturals}$, a rv with parameter space $p \in (0,1)$ that Sir RA Fisher introduced in 1943 to model relative species abundance. 
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{23} 
+\vspace{-0.2cm}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+%\item $X$ is a continuous rv
+\item $\sum_{x \in \reals} p^{old}(x) = 1$
+\item $X$ has the same support as the rv $Y \sim \poisson{\lambda}$
+\item $F(x) = -\displaystyle\oneover{\natlog{1-p}}\sum_{x = 1}^\infty  \frac{p^x}{x}$
+\item $-\displaystyle\sum_{x = 1}^\infty  \oneover{\natlog{1-p}}\frac{p^x}{x} = 1$
+\item $\expe{X} = -\displaystyle\oneover{\natlog{1-p}}\sum_{x = 1}^\infty  \frac{p^x}{x}$
+\item $\expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$
+\item $\expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{1}{1-p}$
+\item $\expe{X} = -\displaystyle\oneover{\natlog{1-p}}e^p$
+\item $\expe{X} = 1$ for all $p \in (0,1)$
+
+\item If (i) were to be true then $e \leq \expe{e^X}$
+\item If (i) were to be true then $e \geq \expe{e^X}$
+
+\item $\phi_X(t) = -\displaystyle\oneover{\natlog{1-p}}\sum_{x = 1}^\infty  \frac{p^x}{x}$
+\item $\phi_X(t) = -\displaystyle\oneover{\natlog{1-p}}\sum_{x = 1}^\infty  e^{tx}\frac{p^x}{x}$
+\item $\phi_X(t) = -\displaystyle\oneover{\natlog{1-p}}\sum_{x = 1}^\infty  \frac{(e^{it}p)^x}{x}$
+\item $\phi_X(t) = \displaystyle\frac{\natlog{1-e^{it}p}}{\natlog{1-p}}$
+
+\item $\phi_X(t)$ is finite for all $t \in \reals$ 
+\item $\phi_X(t) \in L^1$
+\item $M_X(t)$ is finite for all $t \in \reals$ where $M_X(t)$ is the moment generating function of $X$
+\item $f_X(x) = \displaystyle\oneover{2\pi} \int_\reals e^{-itx} \frac{\natlog{1-e^{it}p}}{\natlog{1-p}} dt$ \\
+
+Let $Y = aX$ where $a > 0$.
+
+\item $Y \sim -\displaystyle\frac{a}{\natlog{1-p}}\frac{p^y}{y} \indic{y \in \naturals}$
+\item $Y \sim -\displaystyle\oneover{\natlog{1-p}}\frac{p^{y/a}}{y/a} \indic{y/a \in \naturals}$
+\item $Y \sim -\displaystyle\oneover{\natlog{1-p}}\frac{p^{ay}}{ay} \indic{ay \in \naturals}$
+\item $Y \sim -\displaystyle\frac{a}{\natlog{1-p}}\frac{p^{y/a}}{y} \indic{y \in \braces{a, 2a, 3a, \ldots}}$
+
+
+\end{enumerate}
+\end{multicols}
+
+\eenum\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\problem\timedsection{12} \ingray{Let $X \sim \text{Logarithmic}(p) := -\displaystyle\oneover{\natlog{1-p}}\frac{p^x}{x} \indic{x \in \naturals}$, a rv with parameter space $p \in (0,1)$ that Sir RA Fisher introduced in 1943 to model relative species abundance.} It can be shown that $\phi_X(t) = \displaystyle\frac{\natlog{1-e^{it}p}}{\natlog{1-p}}$, $M_X(t) = \displaystyle\frac{\natlog{1-e^{t}p}}{\natlog{1-p}} \indic{t < -\natlog{p}}$, $\mu := \expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$ and $\sigsq := \var{X} = -\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$.% and $F(x) = \parens{1 + \displaystyle\frac{B(p, x+1,0)}{\natlog{1-p}}} \indic{x > 0}$.
+%
+%\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+%
+%\begin{enumerate}[(a)]
+%\item $\prob{aX > 1} \leq -\displaystyle\frac{a}{\natlog{1-p}}\frac{p}{1-p}$
+%\item $\text{Med}\bracks{X} \leq -\displaystyle\frac{1}{\natlog{1-p}}\frac{p}{1-p}$
+%\end{enumerate}
+%\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{20} \ingray{Let $X \sim \text{Logarithmic}(p) := \overbrace{-\displaystyle\oneover{\natlog{1-p}}\frac{p^x}{x}}^{p^{old}(x)} \indic{x \in \naturals}$, a rv with parameter space $p \in (0,1)$ that Sir RA Fisher introduced in 1943 to model relative species abundance.} It can be shown that $\phi_X(t) = \displaystyle\frac{\natlog{1-e^{it}p}}{\natlog{1-p}}$, $\mu := \expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$ and $\sigsq := \var{X} = -\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$. Let $X_n \sim \text{Logarithmic}(1/n)$ where $X_i$ is independent of $X_j$ if $i \neq j$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $X_n$ is a legal rv for all $n \in \naturals$
+\item $\phi_{X_n}(t) = \displaystyle\frac{\natlog{1-e^{it}/n}}{\natlog{(n-1)/n}}$
+
+\item $\support{X_n} = \braces{1/n, 2/n, 3/n, \ldots}$
+
+\item If $T = X_1 + \ldots + X_n$ then $\phi_{T}(t) = \tothepow{\phi_{X_n}(t)}{n}$
+\item If $\Xbar = \oneover{n}\parens{X_1 + \ldots + X_n}$ then $\phi_{\Xbar}(t) = \phi_{T}(t/n)$
+\item If $\Xbar = \oneover{n}\parens{X_1 + \ldots + X_n}$ then $\Xbar \convp -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$
+
+
+\item If you can show that the PMF of $X_n$ converges to the PMF of $W$, some other rv, then $X_n \convd W$
+
+\item $X_n \convd \poisson{\lambda}$ where $\lambda  = np = n \oneover{n} = 1$
+\item $X_n \convd 1$
+\item $X_n \convp 1$
+\item $X_n$ does not converge in distribution to any legal rv
+\item $X_n$ does not converge in probability to any constant
+
+\item $\cov{X_i}{X_j} = \displaystyle\oneover{i} - \oneover{j}$ if $i < j$
+
+\item If the PMF of any general sequence $X_n$ (not necessarily the Logarithmic rv sequence in this problem) does not converge to any legal PMF, then $X_n$ cannot converge in distribution to any rv
+\end{enumerate}
+\end{multicols}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{14} \ingray{Let $X \sim \text{Logarithmic}(p) := \overbrace{-\displaystyle\oneover{\natlog{1-p}}\frac{p^x}{x}}^{p^{old}(x)} \indic{x \in \naturals}$, a rv with parameter space $p \in (0,1)$ that Sir RA Fisher introduced in 1943 to model relative species abundance. It can be shown that $\phi_X(t) = \displaystyle\frac{\natlog{1-e^{it}p}}{\natlog{1-p}}$, $\mu := \expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$ and $\sigsq := \var{X} = -\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$.} Let $\Xoneton \sim \text{Logarithmic}(p)$ and $T_n = X_1 + \ldots + X_n$ and $\Xbar_n = T_n / n$.
+
+\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\support{T_2} = \naturals$
+\item $T_2 \sim \displaystyle \sum_{x=1}^{t-1} p^{old}(x) p^{old}(t - x)$
+\item $T_2 \sim \displaystyle \sum_{x=1}^{t} p^{old}(x) p^{old}(t - x)$
+\item $T_2 \sim \displaystyle\frac{p^t}{\natlog{1-p}^2}  \sum_{x=1}^{t-1} \frac{1}{x(t-x)}$
+\item $T_2 \sim \text{Logarithmic}(2p)$
+\item $X_1 - X_2 \sim \text{Skellam}(2p)$
+\item $X_1 - X_2 \sim \text{Deg}(0)$
+\item $\prob{T_2 = 2} = \displaystyle\frac{p^2}{\natlog{1-p}^2} $
+\item $\displaystyle \frac{\Xbar_n - \mu}{\sigma / \sqrt{n}} \convd \stdnormnot$
+\item $\displaystyle \frac{T_n - \mu}{\sigma / \sqrt{n}} \convd \stdnormnot$
+\item $\displaystyle \frac{T_n - n\mu}{\sigma / \sqrt{n}} \convd \stdnormnot$
+\item The central limit theorem does not apply in the case of a sum of iid logarithmic rv's
+\item $\Xbar \convp -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$
+\item The weak law of large numbers does not apply for in the case of a sum of iid logarithmic rv's since $\var{X}$ can be undefined for some values of $p$ in the parameter space
+\end{enumerate}
+\end{multicols}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{19} \ingray{Let $X \sim \text{Logarithmic}(p) := \overbrace{-\displaystyle\oneover{\natlog{1-p}}\frac{p^x}{x}}^{p^{old}(x)} \indic{x \in \naturals}$, a rv with parameter space $p \in (0,1)$ that Sir RA Fisher introduced in 1943 to model relative species abundance. It can be shown that $\phi_X(t) = \displaystyle\frac{\natlog{1-e^{it}p}}{\natlog{1-p}}$, $\mu := \expe{X} = -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$ and $\sigsq := \var{X} = -\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$.} Let $Y\,|\,X = x \sim \text{Logarithmic}(x)$ and $X \sim \betanot{\alpha}{\beta}$.
+
+\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{changemargin}{-1cm}{-1cm}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item The rv $Y$ is called a \qu{compound distribution}
+\item The rv $X$ is continuous
+\item The rv $Y$ is continuous
+
+\item $f_Y(y) = \displaystyle\int_0^1 -\oneover{\natlog{1-p}}\frac{p^x}{x} \indic{x \in \naturals}~\oneover{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1} dx$
+
+\item $f_Y(y) = \displaystyle\int_0^1 -\oneover{\natlog{1-y}}\frac{y^x}{x} \indic{x \in \naturals}~\oneover{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1} dx$
+
+\item $f_Y(y) = \displaystyle\int_0^1 -\oneover{\natlog{1-x}}\frac{x^y}{y} \indic{y \in \naturals}~\oneover{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1} dx$
+
+\item $f_Y(y) = \displaystyle\int_0^1 -\oneover{\natlog{1-x}}\frac{x^y}{y} \indic{y \in \naturals}~\oneover{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1} dy$
+
+\item $\expe{Y} = \expesub{X}{-\displaystyle\oneover{\natlog{1-X}}\frac{X}{1-X}}$
+\item $\expe{Y} = \expesub{X}{-\displaystyle\oneover{\natlog{1-p}}\frac{X}{1-X}}$
+\item $\expe{Y} =  -\displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p}$
+
+\item $\var{Y} = \varsub{X}{\displaystyle\oneover{\natlog{1-X}}\frac{X}{1-X}} - ~\expesub{X}{\displaystyle\frac{X^2 + X \natlog{1-X}}{(1-X)^2 \natlog{1-X}^2}}$
+\item $\var{Y} = \varsub{X}{\displaystyle\oneover{\natlog{1-X}}\frac{X}{1-X}} - ~\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$
+\item $\var{Y} = \displaystyle\oneover{\natlog{1-p}}\frac{p}{1-p} - ~\displaystyle\frac{p^2 + p \natlog{1-p}}{(1-p)^2 \natlog{1-p}^2}$
+
+\item $f_{X|Y}(x,y)$ can be written in either closed or not closed form given the information provided here
+\end{enumerate}
+\end{multicols}
+\end{changemargin}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{9} Let $Z_1, Z_2 \iid \stdnormnot$, $M = Z_1 Z_2$ and let $U = Z_2$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+\item $f_{M, U}(m, u) =  f_{Z_1, Z_2}(m, u)$
+\item $f_{M, U}(m, u) =  f_{Z_1, Z_2}(m/u, u)$
+\item $f_{M, U}(m, u) =  f_{Z_1, Z_2}(m/u, u)/u$
+\item $f_{M}(m) =  \displaystyle\int_\reals f_{M, U}(m, u) du$
+\item $f_{M}(m) =  \displaystyle\int_\reals f_{Z_1}(m/u) f_{Z_2}(u)\oneover{|u|} du$
+\item $f_{M}(m) =  \displaystyle\int_\reals f_{Z_1}(m/u) f_{Z_2}(u)\oneover{|u|} du$
+\item $f_{M}(m) =  \displaystyle\oneover{2\pi}\int_\reals e^{-(m^2/u^2 + u^2) / 2} \oneover{|u|} du$
+\item $f_{M}(m) =  \displaystyle\oneover{\pi}\int_0^\infty e^{-(m^2/u^2 + u^2) / 2} \oneover{u} du$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{15} Let $Z_1, \ldots, Z_n, Z_{n+1}, \ldots, Z_{2n} \iid \stdnormnot$ and $\Z := \bracks{Z_1~Z_2~ ...~ Z_{2n}}^\top$. Let $\bar{Z}_1  = \displaystyle\oneover{n}\sum_{i=1}^n Z_i$ and $\bar{Z}_2  = \displaystyle\oneover{n}\sum_{i=n+1}^{2n} Z_i$. Note that $\expe{Z_i^4} = 3$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{19} 
+
+%\begin{changemargin}{-1cm}{-1cm}
+%\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item Markov's inequality proves that $\prob{|Z_1| > 2} \leq 1/2$
+\item Markov's inequality proves that $\prob{|Z_1| > 2} \leq 1/4$
+\item Chebyshev's inequality proves that $\prob{|Z_1| > 2} \leq 2/9$
+\item Chebyshev's inequality proves that $\prob{|Z_1| > 2} \leq 1/8$
+\item Med$\bracks{Z_1^2} \leq 2$
+
+\item $Z_1^2 / Z_2^2$ is Fisher's F-distributed
+\item $Z_1^2 / Z_2^2$ is Student's T-distributed
+\item $Z_1^2 / Z_2^2$ is Cauchy-distributed
+\item $Z_1^2 / |Z_2|$ is Fisher's F-distributed
+\item $Z_1^2 / |Z_2|$ is Student's T-distributed
+\item $Z_1^2 / |Z_2|$ is Cauchy-distributed
+
+\item $\Z^\top\onevec$ is a quadratic form
+\item $\Z^\top\Z$ is a quadratic form
+\item $\Z^\top\onevec \sim \normnot{0}{2n}$
+\item $\Z^\top\onevec \sim \normnot{0}{1/(2n)}$
+\item $\Z^\top\Z \sim \normnot{n}{2n}$
+\item $\Z^\top\Z \sim \normnot{0}{1/(2n)}$
+\item $\bar{Z}_1$ and $\bar{Z}_2$ are independent
+\item $\bar{Z}_1$ and $\bar{Z}_2$ are $\iid$
+%\item $W_1 \sim \chisq{k}$ where you have enough information to compute $k$
+%\item $W_1$ and $\bar{Z}_1$ are independent
+%\item $W_1$ and $\bar{Z}_1$ are $\iid$
+\end{enumerate}
+%\end{multicols}
+%\end{changemargin}
+\eenum\instr\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} \ingray{Let $Z_1, \ldots, Z_n, Z_{n+1}, \ldots, Z_{2n} \iid \stdnormnot$ and $\Z := \bracks{Z_1~Z_2~ ...~ Z_{2n}}^\top$. Let $\bar{Z}_1  = \displaystyle\oneover{n}\sum_{i=1}^n Z_i$ and $\bar{Z}_2  = \displaystyle\oneover{n}\sum_{i=n+1}^{2n} Z_i$.} Also let $W_1 := \displaystyle\sum_{i=1}^n (Z_i - \bar{Z}_1)^2$ and $W_2 := \displaystyle\sum_{i=n+1}^{2n} (Z_i - \bar{Z}_2)^2$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+%\begin{changemargin}{-1cm}{-1cm}
+%\begin{multicols}{2}
+\begin{enumerate}[(a)]
+
+\item $W_1 \sim \chisq{k}$ where you have enough information to compute $k$
+\item $W_1 \sim \gammanot{k_1}{k_2}$ where you have enough information to compute $k_1$ and $k_2$
+\item $W_1$ and $\bar{Z}_1$ are independent
+\item $W_1$ and $\bar{Z}_1$ are $\iid$
+\item If (c) was true, it could be proved with Cochran's theorem
+\item If $W_1 = \Z^\top\B_1\Z$ then $\B_1 = \I_{2n}$
+\item If $W_1 = \Z^\top\B_1\Z$ then $\B_1 = \bv{J}_{2n}$
+\item If $W_1 = \Z^\top\B_1\Z$ then $\B_1$ has rank $2n-1$
+\item If $W_1 = \Z^\top\B_1\Z$ then $\B_1$ has rank $n-1$
+\item If $W_1 = \Z^\top\B_1\Z$ then $\B_1$ has rank $1$ \\
+
+Let $Z_{(1)}, Z_{(2)}, \ldots, Z_{(2n)}$ be the order statistics for the sequence $Z_1, Z_2, \ldots, Z_{2n}$.
+
+\item $Z_{(i)}$ is beta-distributed for all $i$
+\item $\support{Z_{(i)}} = \reals$ for all $i$
+\item $\expe{Z_{(i)}} < \expe{Z_{(j)}}$ for all $i < j$
+\item The support of the range of the sequence $Z_1, Z_2, \ldots, Z_{2n}$ is $(0, \infty)$
+\end{enumerate}
+%\end{multicols}
+%\end{changemargin}
+\eenum\instr\pagebreak
+
+
+
+
+
+
+\end{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{12} Let $X_1 \sim \exponential{\lambda_1}$ independent of $X_2 \sim \exponential{\lambda_2}$ where $\lambda_1 \neq \lambda_2$ but are both valid values in the parameter space of the exponential rv. Let $T = X_1 + X_2$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+
+\begin{enumerate}[(a)]
+\item $X_1$ does not have a PMF
+\item $X_1$ does not have a CDF
+\item $\prob{T \leq x} = \prob{X_1 \leq x, X_2 \leq x}$
+\item $\prob{X_1 > x, X_2 > x} = e^{-(\lambda_1 + \lambda_2)x}$
+\item $\support{T} = (0, \infty)$
+\item $T$ is Erlang-distributed
+\item $T$ is Gamma-distributed
+\item $T \sim \int_{\support{X_1}} f_{X_1}(x) f_{X_2}(x)dx$
+\item $T \sim \int_{\support{X_1}} f_{X_1}(x) f_{X_2}(t-x)dx$
+\item $T \sim \int_{\support{X_1}} f_{X_1}^{old}(x) f_{X_2}^{old}(t-x) \indic{t-x \in \support{X_1}} dx$
+\item $T \sim \int_{0}^\infty \lambda_1 e^{-\lambda_1 x} \lambda_2 e^{-\lambda_2 (t-x)} \indic{x-t \in (-\infty, 0)} dx$
+\item $T \sim \lambda_1 \lambda_2 \int_{0}^t e^{-\lambda_1 x} e^{-\lambda_2 (t-x)} dx$
+\item $T \sim \lambda_1 \lambda_2 e^{-\lambda_2 t} \indic{t > 0} \int_{0}^t e^{(\lambda_2 - \lambda_1)x} dx$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} e^{-\lambda_2 t} \indic{t > 0} \bracks{e^{(\lambda_2 - \lambda_1)x}}_0^t$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} e^{-\lambda_2 t} e^{(\lambda_2 - \lambda_1)t} \indic{t > 0}$
+\item $T \sim \frac{\lambda_1 \lambda_2}{\lambda_2 - \lambda_1} \parens{e^{-\lambda_1 t} - e^{-\lambda_2 t}} \indic{t > 0}$
+\item If (p) were to be true, then the density of $T$ would have a kernel given by $k(t) = e^{-\lambda_1 t} - e^{-\lambda_2 t}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{9} Let $X_1, X_2 \iid \text{Lomax}\parens{\alpha, \lambda} :=\overbrace{\alpha\lambda^\alpha \tothepow{x + \alpha}{-(\alpha + 1)}}^{f^{old}(x)} \indic{x > 0}$ with parameter space $\alpha, \lambda > 0$. Let $T = X_1 + X_2$, $R = X_1 / X_2$ and $N = X_1 / (X_1 +  X_2)$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+\item If the density of $X_i$ were to be decomposed into $c \times  k(x)$ then $c = \alpha\lambda^\alpha$
+\item $f_T(t) = \indic{t>0} \int_0^t f^{old}(x) f^{old}(t-x) dx$
+\item $f_T(t) \propto \indic{t>0} \int_0^t f^{old}(x) f^{old}(t-x) dx$
+\item $f_T(t) \propto \indic{t>0} \int_0^t \tothepow{(x + \alpha)(t - x + \alpha)}{-(\alpha + 1)} dx$
+
+\item $f_R(r)  \propto \indic{r>0}\displaystyle \int_0^t \displaystyle\frac{f^{old}(x)}{f^{old}(r)} dx$
+\item $f_R(r) = \indic{r>0} \int_0^\infty x f^{old}(rx) f^{old}(x)  dx$
+\item $f_R(r) \propto \indic{r>0} \int_0^\infty x \tothepow{(rx + \alpha)(x + \alpha)}{-(\alpha + 1)}  dx$
+
+\item $f_N(n)  \propto \indic{n>0}\displaystyle \int_0^t \displaystyle\frac{f^{old}(x)}{f^{old}(x) + f^{old}(n)} dx$
+\item $f_N(n) = \indic{n>0} \int_0^\infty x f^{old}(nx) f^{old}(x - nx)  dx$
+\item $f^{old}_N(n) \propto  \int_0^\infty x \tothepow{(nx + \alpha)(x - nx + \alpha)}{-(\alpha + 1)}  dx$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{8} Let $X_1, X_2 \iid \gammanot{\alpha}{\beta}$. Let $T = X_1 + X_2$, $R = X_1 / X_2$ and $N = X_1 / (X_1 +  X_2)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item $F_X(x) = P(\alpha, \beta x)$
+\item $F_X(x) \propto \gamma(\alpha, \beta x)$
+\item $T \sim \gammanot{2\alpha}{\beta}$
+\item $T \sim \erlang{2\alpha}{\beta}$ if $2\alpha \in \naturals$
+\item $R \sim \text{BetaPrime}(\alpha, \alpha)$
+\item $N \sim \text{Beta}(\alpha, \alpha)$
+\item $N \sim \text{Beta}(\beta, \alpha)$ \\
+
+Assume (f) is true for the remainder of this problem
+\item $N \sim \uniform{0}{1}$ if $\alpha = 1$
+\item $F_N(n) = \int_0^n (u(1-u))^{\alpha - 1} du$
+\item $F_N(n) = B(n, \alpha, \alpha) / B(\alpha, \alpha)$
+\item $F_N(n) = I_n (\alpha, \alpha)$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} Let $X_1, X_2 \iid \gammanot{\alpha}{\beta}$. Let  $M = X_1 X_2$, \\ $\bv{g} : \reals^2 \rightarrow \reals^2$, $\bv{h} : \reals^2 \rightarrow \reals^2$ which denotes the inverse of $\bv{g}$, $\bv{X} := \twovec{X_1}{X_2}$, $\bv{x} := \twovec{x_1}{x_2}$, $\bv{Y} := \twovec{Y_1}{Y_2}$ and $\bv{y} := \twovec{y_1}{y_2}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{enumerate}[(a)]
+\item $\support{M} = (0, \infty)$
+\item The function $\bv{g}(x_1, x_2) = \twovec{x_1 x_2}{x_1 x_2}$ is invertible.
+\item The function $\bv{g}(x_1, x_2) = \twovec{x_1 x_2}{x_2}$ is invertible. 
+\item If $\bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$, then the Jacobian determinant is $\twobytwomat{1/y_2}{-y_1 / y_2^2}{0}{1}$.
+\item If $\bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$, then the Jacobian determinant is $1/y_2$.
+\item If $\x = \bv{h}(y_1, y_2) = \twovec{y_1 / y_2}{y_2}$ then $f_{\Y}(\y) = f_{\X}(y_1 / y_2, y_2) / \abss{y_2}$
+
+\item $f_M(m) = f_{\X}(m, m)$
+\item $f_M(m) = f_{X_1}(m) f_{X_2}(m)$
+\item $f_M(m) = \int_\reals f_{X_1}(um) f_{X_2}(m) du$
+\item $f_M(m) = \int_\reals f_{X_1}(m/u) f_{X_2}(u) / u ~du$
+\item $f_M(m) = \int_\reals f_{X_1}(m/u) f_{X_2}(u) / |u| ~du$
+\item $f_M(m) = \int_\reals f_{\X}(m/u, u) / |u| ~du$
+
+\item $f_M(m) = \displaystyle\frac{\beta^{2\alpha}}{\Gamma(\alpha)^2} \indic{m > 0} \int_0^\infty \oneover{u} \tothepow{\displaystyle \frac{m}{u}}{\alpha - 1} e^{-\beta m / u} u^{\alpha - 1} e^{-\beta u}~du$
+
+\item $f_M(m) = \displaystyle\frac{\beta^{2\alpha}}{\Gamma(\alpha)^2} m^{\alpha - 1} \indic{m > 0} \int_0^\infty \frac{e^{-\beta (m / u + u)}}{u} ~du$
+
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{9} Consider a sequence of rv's $\Xoneton \iid \logistic{0}{1} := \displaystyle \frac{e^{-x}}{\squared{1 + e^{-x}}}$ \\ whose expectation is zero and let $X_{(1)}, \ldots, X_{(n)}$ denote this sequence's order statistics and $R := X_{(n)} - X_{(1)}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{18} 
+
+\begin{enumerate}[(a)]
+\item For all $i$, $X_i$ is an \qu{error distribution}
+\item There exist nonzero constants $a, b$ such that for all $i$, $a X_i + b$ is an \qu{error distribution}
+
+\item $F_{X_{(n)}} = F(x)^n$
+\item If $\Xoneton$ were not independent, the formula in (c) could be different
+
+\item $X_{(1)}, \ldots, X_{(n)} \iid \logistic{0}{1}$
+\item $X_{(1)}, \ldots, X_{(n)}$ are all independent
+\item $X_{(1)}$ has most of its mass near zero
+\item $X_{(n)}$ has most of its mass near zero
+
+\item $\support{X_{(k)}} = \reals$ for all $k$ and all $n$
+
+\item $\expe{R} = 0$
+
+\item $\prob{R \in [-a, +a]}$ for $a \in \reals$ increases as $n$ gets larger
+
+\item $F_{X_{(1)}}(x) = 1 - \tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $F_{X_{(1)}}(x) = 1 - n\tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $F_{X_{(1)}}(x) = 1 - \tothepow{\displaystyle \frac{e^{-x}}{(1 + e^{-x})^2}}{n}$ 
+
+\item $f_{X_{(1)}}(x) = n \displaystyle\tothepow{\displaystyle \frac{e^{-x}}{1 + e^{-x}}}{n}$ 
+\item $f_{X_{(k)}}(x) = n \displaystyle \frac{e^{-x(n-k+1)}}{(1 + e^{-x})^{n+1}} $  
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{8} Let $X \sim \exponential{\lambda}$ and $Y\,|\,X = x \sim \uniform{0}{x}$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+\item The support of the joint density of $X$ and $Y$ is in the first quadrant of the cartesian plane, below the line $y=x$ and above the $x$-axis.
+\item $\support{Y} = [0,1]$
+\item $\prob{Y > 1/2} = 1/2$ for all $\lambda$ in the parameter space of the exponential rv
+\item For positive $y$, $f_Y(y)$ is monotonically decreasing
+\item $f_X(x) = \lambda e^{-\lambda x}$
+\item $f_Y(y) = \lambda e^{-\lambda y}$
+
+\item $f_Y(y) = \indic{y > 0} \displaystyle\int_y^\infty \displaystyle \frac{e^{-\lambda x}}{x} dx$
+
+\item $\support{X\,|\,Y=y} = [y, \infty)$
+\item $X\,|\,Y=y$ is a uniform rv
+
+\item $\displaystyle\int_\reals \displaystyle\int_\reals \displaystyle\oneover{x} \indic{y \in [0, x]} ~\lambda e^{-\lambda x} \indic{x > 0} ~dx dy = 1$ 
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{11} Let $X \sim \exponential{\lambda}$ and $Y\,|\,X  = x \sim \exponential{x}$
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+
+\begin{enumerate}[(a)]
+\item $f_X(x) = \lambda e^{-\lambda x}$
+\item $f_{Y\,|\,X}(y,x) = xe^{-xy} \indic{y > 0}$
+\item $\lambda  \displaystyle \int_0^\infty \displaystyle\int_0^\infty xe^{-xy} ~e^{-\lambda x}   ~dx dy = 1$ 
+\item The rv $Y$ is considered a \qu{compound distribution}
+
+\item $\support{Y} = \reals$
+\item $Y$ is not a valid rv
+\item $f_Y(y) = \int_\reals f_{Y\,|\,X}(y,x) f_X(x) dx$
+
+\item $f_Y(y) = e^{-\lambda y} / y \indic{y>0}$
+\item $f_Y(y) = \lambda e^{-\lambda y} / (y + \lambda) \indic{y>0}$
+\item $f_Y(y) = \lambda y / (y + \lambda) \indic{y>0}$
+\item $f_Y(y) = \lambda / (y + \lambda)^2 \indic{y>0}$
+\item $f_Y(y) = \lambda e^{-\lambda y} / y \indic{y>0}$
+\end{enumerate}
+\eenum\instr \\
+
+\noindent Some of these antiderivatives (from Wolfram Alpha) may help you with the above problem:
+
+\beqn
+\int x^3 e^{-a x} dx &=& -\displaystyle\frac{e^{-a x} (a^3 x^3 + 3 a^2 x^2 + 6 a x + 6)}{a^4} + C \\
+\int x^2 e^{-a x} dx &=&  -\displaystyle\frac{e^{-a x} (a^2 x^2 + 2 a x + 2)}{a^3} + C \\
+\int x e^{-a x} dx &=& -\displaystyle\frac{e^{-a x} (a x + 1)}{a^2} + C
+\eeqn
+\pagebreak
+
+%%%%% mixture
+
+
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
